@@ -3,26 +3,26 @@
 const CHANNELS = [
   {
     label: 'Email',
-    value: 'hola@estudio.dev',
-    href: 'mailto:hola@estudio.dev',
+    value: 'ariellamas.tech@gmail.com',
+    href: 'mailto:ariellamas.tech@gmail.com',
     hint: 'Para proyectos y colaboraciones',
   },
   {
     label: 'GitHub',
-    value: 'github.com/estudio-dev',
-    href: 'https://github.com',
+    value: 'github.com/revirado',
+    href: 'https://github.com/revirado',
     hint: 'Código abierto y experimentos',
   },
   {
     label: 'X · Twitter',
-    value: '@estudio_dev',
-    href: 'https://x.com',
+    value: '@thewrongmeca',
+    href: 'https://x.com/thewrongmeca',
     hint: 'Notas, enlaces y observaciones',
   },
   {
     label: 'LinkedIn',
-    value: 'in/estudio-dev',
-    href: 'https://linkedin.com',
+    value: 'in/ariel-lamas',
+    href: 'https://ar.linkedin.com/in/ariel-lamas-35a7762b1',
     hint: 'Trayectoria profesional',
   },
 ];

@@ -1,9 +1,9 @@
 ▲ Next.js 16.3.4 (Turbopack)
 - Local:         http://localhost:3000
 - Network:       http://192.168.100.43:3000
-✓ Ready in 625ms
-✓ Running next.config.ts took 71ms
+- Environments: .env
+✓ Ready in 599ms
+✓ Running next.config.ts took 67ms
 
- GET / 200 in 823ms (next.js: 289ms, application-code: 534ms)
-[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 862ms (next.js: 319ms, application-code: 543ms)
 [browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.

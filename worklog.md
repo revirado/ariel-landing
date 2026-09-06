@@ -441,3 +441,43 @@ Stage Summary:
 - Capacidades deshabilitada (código mantenido para posible reactivación).
 - Limpieza para Vercel completa: sin prisma, sin standalone, build script simple.
 - Build de producción exitoso, listo para deploy en Vercel.
+
+---
+Task ID: 12
+Agent: main (orchestrator)
+Task: Actualizar datos de contacto + crear .env/.env.example para flag de debug.
+
+Work Log:
+- 1. Datos de contacto actualizados (contact.tsx CHANNELS):
+  - Email: hola@estudio.dev → ariellamas.tech@gmail.com (mailto:ariellamas.tech@gmail.com)
+  - GitHub: github.com/estudio-dev → github.com/revirado (https://github.com/revirado)
+  - X · Twitter: @estudio_dev → @thewrongmeca (https://x.com/thewrongmeca)
+  - LinkedIn: in/estudio-dev → in/ariel-lamas (https://ar.linkedin.com/in/ariel-lamas-35a7762b1)
+
+- 2. Sistema de env var para controlar debug mode:
+  - Creado /home/z/my-project/.env con `NEXT_PUBLIC_DEBUG_MODE=true` (desarrollo).
+  - Creado /home/z/my-project/.env.example con documentación del flag y valor default `true`.
+  - Actualizado .gitignore: `.env*` sigue ignorado pero añadido `!.env.example` para que el example sí se commitee.
+  - Cambiado DEBUG_MODE en hero-scene.tsx de `= true` (hardcoded) a `= process.env.NEXT_PUBLIC_DEBUG_MODE === 'true'` (runtime).
+  - DEBUG_MODE se usa en:
+    - page.tsx: `{DEBUG_MODE && <DebugOverlay />}` — condiciona el montaje del overlay.
+    - hero-scene.tsx OrqController: solo publica window.__orqDebug si DEBUG_MODE es true.
+    - debug-overlay.tsx: guarda `if (!DEBUG_MODE) return;` en useEffect y render.
+
+Verificación con Agent Browser:
+- NEXT_PUBLIC_DEBUG_MODE=true: hasDebugSwitch=true, hasDebugPanel=true. ✓
+- NEXT_PUBLIC_DEBUG_MODE=false: hasDebugSwitch=false, hasDebugPanel=false. ✓
+- Server detecta cambios de .env automáticamente ("Reload env: .env").
+- Contacto: 4 canales verificados con valores correctos y hrefs válidos:
+  - mailto:ariellamas.tech@gmail.com (sin target blank)
+  - https://github.com/revirado (_blank)
+  - https://x.com/thewrongmeca (_blank)
+  - https://ar.linkedin.com/in/ariel-lamas-35a7762b1 (_blank)
+- Lint limpio, dev server sin errores.
+
+Stage Summary:
+- Datos de contacto reales configurados.
+- .env + .env.example creados con NEXT_PUBLIC_DEBUG_MODE.
+- Debug mode ahora es runtime (no compile-time): se controla desde env vars.
+- Para producción: setear NEXT_PUBLIC_DEBUG_MODE=false en el dashboard de Vercel.
+- .env.example commiteable (ignorado .env*, excepto .env.example).

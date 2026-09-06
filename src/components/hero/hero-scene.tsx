@@ -104,10 +104,15 @@ const PRELOADER_COLOR = '#0088ff';
 const PLANE_COVERAGE_FACTOR = 1.05;
 
 // --- DEBUG (fuera del Brief) ---
-// Flag compile-time: cuando es true, se monta el DebugOverlay en page.tsx
-// y se exponen variables internas en window.__orqDebug para inspección.
-// El usuario puede togglear la visibilidad del panel desde un switch en la UI.
-export const DEBUG_MODE = true;
+// Flag runtime controlado por env var NEXT_PUBLIC_DEBUG_MODE:
+//   - "true": se monta el DebugOverlay en page.tsx (panel fijo top-right con
+//     variables del algoritmo ORQ + switch para togglear la visibilidad en UI).
+//   - cualquier otro valor (o undefined): ni el panel ni el switch se montan.
+// Útil para producción — el usuario final no debería ver el panel de debug.
+// Definir NEXT_PUBLIC_DEBUG_MODE en .env (desarrollo) o en el dashboard de
+// Vercel (producción).
+export const DEBUG_MODE =
+  process.env.NEXT_PUBLIC_DEBUG_MODE === 'true';
 
 // --- Derivados (Brief §4) ---
 export const TOTAL_SPINS = MODELOS_CONFIG.reduce(
