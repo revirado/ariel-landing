@@ -14,10 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Donde el código tiene la misma lógica que un mundo por construir",
+  title: "Ariel Lamas — Hago que las ideas tomen forma",
   description:
-    "Portfolio personal de un Frontend Developer especializado en experiencias web con Three.js. Narrativa visual, 3D con base matemática y dirección creativa.",
+    "Ariel Lamas — frontend developer especializado en experiencias web inmersivas con Three.js. Narrativa visual, 3D con base matemática y dirección creativa.",
   keywords: [
+    "Ariel Lamas",
     "Three.js",
     "React Three Fiber",
     "Frontend",
@@ -26,11 +27,11 @@ export const metadata: Metadata = {
     "3D",
     "Álgebra lineal",
   ],
-  authors: [{ name: "Portfolio Personal" }],
+  authors: [{ name: "Ariel Lamas" }],
   openGraph: {
-    title: "Donde el código tiene la misma lógica que un mundo por construir",
+    title: "Ariel Lamas — Hago que las ideas tomen forma",
     description:
-      "Frontend Developer especializado en experiencias web con Three.js.",
+      "Frontend developer especializado en experiencias web inmersivas con Three.js.",
     type: "website",
   },
 };

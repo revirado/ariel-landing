@@ -47,14 +47,12 @@ export function HeroOverlay() {
           className="mb-6 text-[0.7rem] sm:text-xs font-mono uppercase tracking-[0.3em] text-white/40"
           style={{ opacity: opacity * 0.9 }}
         >
-          Frontend · Three.js · Narrativa visual
+          Constructor de mundos
         </p>
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-light leading-[1.1] tracking-tight text-white">
-          Donde el código tiene la
+          Hago que las ideas
           <br />
-          misma lógica que un
-          <br />
-          <span className="font-normal italic text-white/90">mundo por construir.</span>
+          <span className="font-normal italic text-white/90">tomen forma.</span>
         </h1>
       </div>
 

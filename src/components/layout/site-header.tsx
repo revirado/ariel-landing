@@ -6,8 +6,8 @@
 
 import { useEffect, useState } from 'react';
 
+// Capacidades: deshabilitada por el cliente (brief-modificaciones-textos.md §"Fuera de alcance").
 const NAV_ITEMS = [
-  { label: 'Capacidades', href: '#capacidades' },
   { label: 'Manifiesto', href: '#manifiesto' },
   { label: 'Contacto', href: '#contacto' },
 ];
@@ -41,11 +41,10 @@ export function SiteHeader() {
         <a
           href="#top"
           className="font-mono text-xs tracking-[0.2em] text-white/80 hover:text-white transition-colors"
-          aria-label="Inicio"
+          aria-label="Inicio — Ariel Lamas"
         >
           <span className="text-white/50">{"// "}</span>
-          estudio
-          <span className="text-white/40">.dev</span>
+          Ariel Lamas
         </a>
 
         <ul className="flex items-center gap-6 text-xs sm:text-sm">

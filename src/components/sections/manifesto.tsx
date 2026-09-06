@@ -18,11 +18,11 @@ export function Manifesto() {
             Una nube dispersa es un mundo que aún no ha decidido qué forma tomar.
           </p>
           <p>
-            El código, como el universo, parte del caos y construye orden solo
+            Todo, como el universo, parte del caos y construye orden solo
             cuando alguien decide observarlo.
           </p>
           <p className="pt-4 text-white/60 italic">
-            "Donde el código tiene la misma lógica que un mundo por construir."
+            "Del caos, forma."
           </p>
         </blockquote>
 

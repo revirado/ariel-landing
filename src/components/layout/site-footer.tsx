@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs">
         <div className="flex items-center gap-3 font-mono text-white/40">
           <span className="text-white/30">{"//"}</span>
-          <span>estudio.dev</span>
+          <span>Ariel Lamas</span>
           <span className="text-white/20">·</span>
           <span>{year}</span>
         </div>
@@ -19,7 +19,7 @@ export function SiteFooter() {
           </span>
           <span className="text-white/20">·</span>
           <span>
-            Puntos: <span className="text-white/55">6.000 desktop · 3.000 mobile</span>
+            Puntos: <span className="text-white/55">4.000 desktop · 2.000 mobile</span>
           </span>
           <span className="text-white/20">·</span>
           <a
@@ -32,9 +32,10 @@ export function SiteFooter() {
       </div>
 
       <p className="sr-only">
-        Landing personal construida con scroll-driven 3D particle animation
-        basada en el algoritmo ORQ (Orquestador Reactivo) — ventana deslizante
-        L/O/R sobre un estado disperso universal como pegamento entre modelos.
+        Landing personal de Ariel Lamas construida con scroll-driven 3D particle
+        animation basada en el algoritmo ORQ (Orquestador Reactivo) — ventana
+        deslizante L/O/R sobre un estado disperso universal como pegamento entre
+        modelos.
       </p>
     </footer>
   );

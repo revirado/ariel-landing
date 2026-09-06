@@ -1,4 +1,11 @@
 // Capabilities — bloque de capacidades (texto directo, no 3D).
+//
+// SECCIÓN DESHABilitada por decisión del cliente (brief-modificaciones-textos.md §"Fuera de alcance").
+// El código se mantiene intacto para posible reactivación futura.
+// Para reactivar: cambiar `export const CAPABILITIES_ENABLED = false` a `true`
+// y volver a renderizar <Capabilities /> en src/app/page.tsx.
+
+export const CAPABILITIES_ENABLED = false;
 
 const CAPACIDADES = [
   {

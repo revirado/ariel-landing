@@ -4,7 +4,7 @@ import { DebugOverlay } from '@/components/hero/debug-overlay';
 import { DomPreloader } from '@/components/hero/dom-preloader';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
-import { Capabilities } from '@/components/sections/capabilities';
+import { CAPABILITIES_ENABLED, Capabilities } from '@/components/sections/capabilities';
 import { Manifesto } from '@/components/sections/manifesto';
 import { Contact } from '@/components/sections/contact';
 
@@ -16,7 +16,7 @@ export default function Home() {
     >
       {/* Skip link para accesibilidad */}
       <a
-        href="#capacidades"
+        href="#manifiesto"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-[#050505]"
       >
         Saltar al contenido
@@ -52,7 +52,8 @@ export default function Home() {
         />
 
         {/* Secciones de contenido con fondo sólido — cubren el canvas */}
-        <Capabilities />
+        {/* Capabilities: deshabilitada por el cliente (CAPABILITIES_ENABLED=false). */}
+        {CAPABILITIES_ENABLED && <Capabilities />}
         <Manifesto />
         <Contact />
       </main>

@@ -372,3 +372,72 @@ Stage Summary:
 - DOM preloader toma el control inmediatamente al montarse (elimina el initial-overlay).
 - Scroll se desbloquea cuando el preloader termina el fade-out.
 - Hero text nunca visible sin fondo.
+
+---
+Task ID: 11
+Agent: main (orchestrator)
+Task: Cambios de texto + deshabilitar Capacidades + cleanup para Vercel.
+
+Work Log:
+- Leído brief-modificaciones-textos.md (cambios de copy) y Vercel Deploy Notes For LandingPages.txt (cleanup).
+
+1. Capacidades deshabilitada (código mantenido):
+  - Añadido `export const CAPABILITIES_ENABLED = false` en capabilities.tsx.
+  - page.tsx: renderizado condicional `{CAPABILITIES_ENABLED && <Capabilities />}`.
+  - Skip link cambiado de `#capacidades` a `#manifiesto`.
+  - NAV_ITEMS en site-header.tsx: removido el item "Capacidades".
+
+2. Hero (hero-overlay.tsx):
+  - Eyebrow: "Frontend · Three.js · Narrativa visual" → "Constructor de mundos"
+  - Main text: "Donde el código tiene la misma lógica que un mundo por construir" → "Hago que las ideas tomen forma" (con "tomen forma." en itálica).
+
+3. Nav (site-header.tsx):
+  - Logo: "// estudio.dev" → "// Ariel Lamas"
+  - aria-label: "Inicio" → "Inicio — Ariel Lamas"
+
+4. Footer (site-footer.tsx):
+  - "estudio.dev" → "Ariel Lamas"
+  - Puntos: "6.000 desktop · 3.000 mobile" → "4.000 desktop · 2.000 mobile" (ajustado a settings actuales)
+  - sr-only: "Landing personal de Ariel Lamas construida con..."
+
+5. Manifiesto (manifesto.tsx) — reemplazo completo:
+  - Tercer párrafo: "El código, como el universo, parte del caos..." → "Todo, como el universo, parte del caos..."
+  - Cita final: "Donde el código tiene la misma lógica que un mundo por construir." → "Del caos, forma."
+  - Párrafo de cierre: mantenido (ya estaba correcto).
+
+6. Contacto (contact.tsx):
+  - Añadido firma: "Soy Ariel Lamas — frontend developer especializado en experiencias web inmersivas. Si tienes una idea..."
+  - Disponibilidad: "Aceptando proyectos para Q1-Q2 2026. Especial interés en experiencias inmersivas, portfolios de producto y pieces que combinen código y dirección visual." → "Aceptando proyectos para el primer semestre de 2026. Especial interés en experiencias inmersivas, portfolios de producto y piezas que unan construcción digital y dirección visual."
+
+7. Layout metadata (layout.tsx):
+  - Title: "Donde el código tiene la misma lógica que un mundo por construir" → "Ariel Lamas — Hago que las ideas tomen forma"
+  - Description, keywords, authors, openGraph: añadido "Ariel Lamas" en correspondientes.
+
+8. Vercel cleanup:
+  - next.config.ts: removido `output: 'standalone'`.
+  - package.json: 
+    - build: "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/" → "next build"
+    - start: cambiado de standalone server.js a "next start -p 3000"
+    - Removidos scripts: db:push, db:generate, db:migrate, db:reset
+    - Removidas deps: @prisma/client, prisma
+    - Name: "nextjs_tailwind_shadcn_ts" → "ariel-lamas-landing"
+  - Removidos archivos: src/lib/db.ts, prisma/schema.prisma, db/custom.db, .env
+  - `bun install` → 2 packages removed (prisma + @prisma/client)
+
+Verificación con Agent Browser:
+- Hero: "// Ariel Lamas" en nav, eyebrow "Constructor de mundos", main text "Hago que las ideas tomen forma". ✓
+- Nav: sin "Capacidades" (solo Manifiesto + Contacto + Hablemos). ✓
+- Manifiesto: cita "Del caos, forma." y tres frases actualizadas. ✓
+- Contacto: firma "Soy Ariel Lamas — frontend developer..." visible. ✓
+- Disponibilidad: "primer semestre de 2026" + "unan construcción digital y dirección visual". ✓
+- Footer: "// Ariel Lamas · 2026". ✓
+- Capacidades: no renderizada. ✓
+- Build: `bun run build` exitoso (17.1s compile, 4 páginas estáticas generadas). ✓
+- Lint limpio. ✓
+- Title del documento: "Ariel Lamas — Hago que las ideas tomen forma". ✓
+
+Stage Summary:
+- Todos los cambios de copy del brief aplicados.
+- Capacidades deshabilitada (código mantenido para posible reactivación).
+- Limpieza para Vercel completa: sin prisma, sin standalone, build script simple.
+- Build de producción exitoso, listo para deploy en Vercel.

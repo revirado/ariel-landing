@@ -1,0 +1,12 @@
+Limpiar prisma del proyecto. dependencias en el package.json codigo etc
+
+
+Ajustar para Vercel: 
+
+next.config.ts:
+  output: 'standalone', // <- No incluir esto
+
+
+El build script en package.json deberia ser el comando simple:
+"build": "next build"
+

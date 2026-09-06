@@ -42,9 +42,7 @@ export function Contact() {
             Hablemos.
           </h2>
           <p className="mt-4 max-w-xl text-sm sm:text-base text-white/60 leading-relaxed">
-            Si tienes una idea que necesita existir en la web — ya sea un
-            portfolio, una experiencia interactiva o un producto — escribime.
-            Respondo en menos de 48h.
+            Soy <span className="text-white/90 font-medium">Ariel Lamas</span> — frontend developer especializado en experiencias web inmersivas. Si tienes una idea que necesita existir en la web — ya sea un portfolio, una experiencia interactiva o un producto — escribime. Respondo en menos de 48h.
           </p>
         </header>
 
@@ -82,9 +80,9 @@ export function Contact() {
             {"// Disponibilidad"}
           </p>
           <p className="text-base text-white/80 leading-relaxed">
-            Aceptando proyectos para Q1-Q2 2026. Especial interés en
-            experiencias inmersivas, portfolios de producto y pieces que
-            combinen código y dirección visual.
+            Aceptando proyectos para el primer semestre de 2026. Especial interés
+            en experiencias inmersivas, portfolios de producto y piezas que unan
+            construcción digital y dirección visual.
           </p>
         </div>
       </div>
